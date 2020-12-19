@@ -1,0 +1,41 @@
+$date
+	Fri Dec 18 19:04:49 2020
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module test_gates $end
+$var wire 3 ! y [2:0] $end
+$var reg 1 " a $end
+$var reg 1 # b $end
+$scope module dut $end
+$var wire 1 " a $end
+$var wire 1 # b $end
+$var wire 3 $ y [2:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b1 $
+0#
+0"
+b1 !
+$end
+#50
+b11 !
+b11 $
+1#
+#100
+b10 !
+b10 $
+0#
+1"
+#150
+b110 !
+b110 $
+1#
+#200

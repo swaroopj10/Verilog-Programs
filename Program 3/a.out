@@ -1,0 +1,64 @@
+#! /usr/local/iverilog/bin/vvp
+:ivl_version "11.0 (devel)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "E:\iverilog\lib\ivl\system.vpi";
+:vpi_module "E:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "E:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "E:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "E:\iverilog\lib\ivl\va_math.vpi";
+S_00000000008969a0 .scope module, "test_andor" "test_andor" 2 2;
+ .timescale 0 0;
+v000000000122ab30_0 .var "a", 0 0;
+v000000000122abd0_0 .var "b", 0 0;
+v000000000122ac70_0 .var "c", 0 0;
+v000000000122ad10_0 .var "d", 0 0;
+v000000000122adb0_0 .net "y", 0 0, L_00000000008951d0;  1 drivers
+S_0000000000896b30 .scope module, "ao" "andor" 2 5, 3 1 0, S_00000000008969a0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "A";
+    .port_info 1 /INPUT 1 "B";
+    .port_info 2 /INPUT 1 "C";
+    .port_info 3 /INPUT 1 "D";
+    .port_info 4 /OUTPUT 1 "Y";
+L_0000000000863420 .functor AND 1, v000000000122ab30_0, v000000000122abd0_0, C4<1>, C4<1>;
+L_0000000000895070 .functor AND 1, v000000000122ac70_0, v000000000122ad10_0, C4<1>, C4<1>;
+L_00000000008951d0 .functor OR 1, L_0000000000863420, L_0000000000895070, C4<0>, C4<0>;
+v0000000000896cc0_0 .net "A", 0 0, v000000000122ab30_0;  1 drivers
+v0000000000862ec0_0 .net "B", 0 0, v000000000122abd0_0;  1 drivers
+v0000000000896d60_0 .net "C", 0 0, v000000000122ac70_0;  1 drivers
+v000000000122a8b0_0 .net "D", 0 0, v000000000122ad10_0;  1 drivers
+v000000000122a950_0 .net "Y", 0 0, L_00000000008951d0;  alias, 1 drivers
+v000000000122a9f0_0 .net "a2", 0 0, L_0000000000895070;  1 drivers
+v000000000122aa90_0 .net "al", 0 0, L_0000000000863420;  1 drivers
+    .scope S_00000000008969a0;
+T_0 ;
+    %vpi_call 2 8 "$dumpfile", "andor.vcd" {0 0 0};
+    %vpi_call 2 9 "$dumpvars", 32'sb00000000000000000000000000000000, S_00000000008969a0 {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000000000122ab30_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000000000122abd0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000000000122ac70_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000000000122ad10_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000000000122ab30_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000000000122abd0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000000000122ac70_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000000000122ad10_0, 0, 1;
+    %delay 10, 0;
+    %vpi_call 2 12 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "test_andor.v";
+    "./andor.v";

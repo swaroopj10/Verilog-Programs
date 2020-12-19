@@ -1,0 +1,44 @@
+$date
+	Fri Dec 18 19:46:31 2020
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module test_encoder $end
+$var wire 2 ! Do [1:0] $end
+$var reg 4 " Din [3:0] $end
+$var reg 1 # En $end
+$scope module mux1 $end
+$var wire 4 $ Din [3:0] $end
+$var wire 1 # En $end
+$var reg 2 % Do [1:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b0 %
+b1 $
+1#
+b1 "
+b0 !
+$end
+#100
+b1 !
+b1 %
+b10 "
+b10 $
+#200
+b10 !
+b10 %
+b100 "
+b100 $
+#300
+b11 !
+b11 %
+b1000 "
+b1000 $
+#400
